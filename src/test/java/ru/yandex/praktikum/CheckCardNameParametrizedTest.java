@@ -31,13 +31,12 @@ public class CheckCardNameParametrizedTest extends BaseTest {
                 {"123456789 1234567890", false},  //  20 символов
                 {"", false},                      //  0 символов
                 {null, false},                    //  null
-
         };
     }
 
     @Test
-    @DisplayName("Тест на проверку возможности печати имени на выпускаемой карте")
-    @Description("Тест проверяет различные варианты имени для возможности печати на выпускаемой карте, а так же проверка метода на null")
+    @DisplayName("Тест на проверку возможности печати имени владельца на выпускаемой карте")
+    @Description("Тест проверяет различные варианты имени владельца для возможности печати на выпускаемой карте и так же проверка метода на null")
     public void checkCardNameParametrized() {
 
         Account account = new Account(name);
@@ -45,7 +44,7 @@ public class CheckCardNameParametrizedTest extends BaseTest {
         boolean actualResult = account.checkNameToEmboss();
         step("Делаем сравнение ожидаемого и реального результата вызова метода checkNameToEmboss");
         Assert.assertEquals(expectedResult, actualResult);
-        System.out.println("Имя Владельца :" +"\"" + name + "\""+ " - карта  может быть выпущена? - " + actualResult);
+        System.out.println("Имя Владельца " +"\"" + name + "\""+ " - карта  может быть выпущена? - " + actualResult);
 
     }
 }
